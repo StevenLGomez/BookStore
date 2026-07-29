@@ -1,4 +1,8 @@
 <?php
+
+// Temporarily enable error display for debugging
+ini_set('display_errors', 1); error_reporting(E_ALL);
+
 // Include the configuration file
 require_once "../app/config/config.php";
 
