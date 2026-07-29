@@ -81,4 +81,3 @@ class Book
         $this->db->execute();
     }
 }
-
