@@ -1,0 +1,21 @@
+# Enable the rewrite engine
+RewriteEngine On
+
+# Verify whether the requested resource is not a directory
+# If the requested path is a directory, rewrite rule will not be applied
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Verify whether  the requested resource is not a file
+# If the requested path is a file, rewrite rule will not be applied
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Rewrite all other requests to index.php, appending query string parameters and marking this as the last rule
+# This line redirect any not existing paths to the index.php file 
+# with the original URL path as a query parameter. 
+
+# Example: http://localhost/book-store/public/index.php/book/id/8
+# Above url will be rewrite into: 
+# http://localhost/book-store/public/index.php?url=book/id/8
+# This approach will be used to create the routing system in the App.php file
+# to get the value of url parameter as $_GET['url'].
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
