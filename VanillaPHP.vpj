@@ -1,0 +1,139 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+    Version="10.0"
+    VendorName="SlickEdit"
+    TemplateName="PHP"
+    WorkingDir=".">
+    <Config
+        Name="Debug"
+        DebugCallbackName="xdebug"
+        Type="php"
+        OutputFile=""
+        CompilerConfigName="">
+        <Menu>
+            <Target
+                Name="Execute"
+                MenuCaption="E&amp;xecute"
+                Dialog="_php_options_form Run"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw"
+                Deletable="0">
+                <Exec
+                    CmdLine="php_execute %(SLICKEDIT_PHP_EXECUTE_ARGS)"
+                    Type="Slick-C"/>
+            </Target>
+            <Target
+                Name="Debug"
+                MenuCaption="&amp;Debug"
+                Dialog="_php_options_form Debug"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveNone"
+                RunFromDir="%rw"
+                Deletable="0">
+                <Exec
+                    CmdLine="php_debug"
+                    Type="Slick-C"/>
+            </Target>
+            <Target
+                Name="PHP Options"
+                MenuCaption="PHP &amp;Options"
+                ShowOnMenu="HideIfNoCmdLine"
+                Deletable="0">
+                <Exec
+                    CmdLine="phpoptions"
+                    Type="Slick-C"/>
+            </Target>
+        </Menu>
+        <List Name="PHP Options">
+            <Item
+                Name="AppType"
+                Value="web-local"/>
+            <Item
+                Name="DefaultFile"
+                Value=""/>
+            <Item
+                Name="ScriptArguments"
+                Value=""/>
+            <Item
+                Name="InterpreterArguments"
+                Value=""/>
+            <List Name="Map">
+                <Item
+                    Name="RemoteUrl"
+                    Value="http://localhost/book-store/public/index.php"/>
+                <Item
+                    Name="LocalRoot"
+                    Value="/var/www/html/book-store/"/>
+            </List>
+        </List>
+        <List Name="Xdebug Options">
+            <Item
+                Name="ServerHost"
+                Value="127.0.0.1"/>
+            <Item
+                Name="ServerPort"
+                Value="9000"/>
+            <Item
+                Name="ListenInBackground"
+                Value="1"/>
+            <Item
+                Name="StayInDebugger"
+                Value="1"/>
+            <Item
+                Name="AcceptConnections"
+                Value="prompt"/>
+            <Item
+                Name="BreakInSession"
+                Value="step-into"/>
+            <Item
+                Name="show_hidden"
+                Value="1"/>
+            <List Name="Map">
+                <Item
+                    Name="RemoteRoot"
+                    Value="/var/www/html/book-store/"/>
+                <Item
+                    Name="LocalRoot"
+                    Value="/var/www/html/book-store/"/>
+            </List>
+        </List>
+    </Config>
+    <Files AutoFolders="DirectoryView">
+        <Folder Name="app">
+            <Folder Name="config">
+                <F N="app/config/config.php"/>
+            </Folder>
+            <Folder Name="controllers">
+                <F N="app/controllers/BookController.php"/>
+            </Folder>
+            <Folder Name="core">
+                <F N="app/core/App.php"/>
+                <F N="app/core/Controller.php"/>
+                <F N="app/core/Database.php"/>
+            </Folder>
+            <Folder Name="models">
+                <F N="app/models/Book.php"/>
+            </Folder>
+            <Folder Name="views">
+                <Folder Name="Book">
+                    <F N="app/views/Book/AddBook.php"/>
+                    <F N="app/views/Book/Book.php"/>
+                    <F N="app/views/Book/Books.php"/>
+                    <F N="app/views/Book/UpdateBook.php"/>
+                </Folder>
+                <F N="app/views/layout.php"/>
+            </Folder>
+            <F N="app/routes.php"/>
+        </Folder>
+        <Folder Name="public">
+            <F N="public/index.php"/>
+        </Folder>
+        <F N="index.html"/>
+        <F
+            N="*"
+            Recurse="1"
+            Excludes="*.tiff;*.tbz;*.pdb;*.avi;*.msi;*.cpgz;*.rpm;*.class;*.a;*.gif;*.taz;*.bin;*.jpg;*.svgz;*.exe;*.mp3;*.jar;*.ico;*.tif;*.txz;*.sl;*.png;*.jpeg;*.tar;*.Z;*.sta;*.xslx;*.gz;*.bz2;*.xz;*.mpeg;*.vpb;*.chm;*.dll;*.7z;*.lib;*.so;*.ex;*.tgz;*.war;*.vtg;*.docx;*.rar;*.o;*.wmv;*.cpio;*.zip;*.bmp;*.suo;*.xlsx;*.7zip;*.winmd;*.pdf;*.obj;*.z;*.tbz2;.git/;.svn/;.CVS/;SSCS/;.DS_Store;*.vpw;*.vpj;*.vpwhist;*.vpwhistxml;*.vpwhistu;*.vpwhistuxml;*.vpwwildcardcache"
+            D="1"/>
+    </Files>
+</Project>

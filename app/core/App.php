@@ -49,12 +49,6 @@ class App
         }
 
         // Include the controller file
-        echo "[../app/controllers/$this->controller.php] ";
-        echo "<br />";
-        echo "controller variable = [" . $this->controller . "]\n";;
-        echo "<br />";
-        echo "method     variable = [" . $this->method . "]\n";;
-
         require_once '../app/controllers/' . $this->controller . '.php';
 
         // Create an object (Instantiate controller) from the imported controller

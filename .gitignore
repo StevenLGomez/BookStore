@@ -1,5 +1,8 @@
+
+# Do not check in DB configuration
 app/config/config.php
 
+*.vpwwildcard*
 *.vpwhist*
 *.vtg
 
