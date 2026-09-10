@@ -1,6 +1,7 @@
 <?php
 
-// Temporarily enable error display for debugging
+// Temporarily enable error display for debugging - if needed
+// Was not included in original example code
 ini_set('display_errors', 1); error_reporting(E_ALL);
 
 // Include the configuration file

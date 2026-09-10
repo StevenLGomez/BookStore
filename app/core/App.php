@@ -33,7 +33,7 @@ class App
             $route = $urlParts[0] . '/' . $urlParts[1];
         }
 
-        // Check if the route exists in the routes array in router.php file
+        // Check if the route exists in the routes array in routes.php file
         if (isset($routes[$route])) {
             // Set the controller based on the route configuration
             $this->controller = $routes[$route]['controller'];
